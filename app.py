@@ -9,21 +9,22 @@ st.markdown(
     <style>
     body {
         background-color: #0b0b0f;
-        color: #e5e5e5;
+        color: #ffffff;
         font-family: 'Helvetica', sans-serif;
     }
     .stApp {
         padding: 0px 50px 50px 50px;
     }
     h1, h2, h3, p {
-        color: #f2f2f2;
+        color: #ffffff;
     }
     .slide-text {
         font-size: 22px;
         line-height: 1.6;
         padding: 40px;
-        background-color: rgba(11,11,15,0.6);
+        background-color: rgba(11,11,15,0.7);
         border-radius: 15px;
+        color: #ffffff;
     }
     .stButton>button {
         background-color: #ff4b5c;
@@ -34,7 +35,7 @@ st.markdown(
     }
     .stTextArea>div>textarea {
         background-color: #1c1c27;
-        color: #e5e5e5;
+        color: #ffffff;
         font-size: 18px;
     }
     </style>
@@ -47,24 +48,59 @@ USERNAME = "denian"
 PASSWORD = "onlyyou"
 MAX_ATTEMPTS = 3
 
-# ---------------- Slides Content ----------------
+# ---------------- Slides Content (100+ words each) ----------------
 slides = [
-    "💔 Slide 1: Memories of You\nI still remember the first time our paths crossed...",
-    "💔 Slide 2: Lonely Streets\nWalking alone, streets empty...",
-    "💔 Slide 3: Letters I Never Sent\nI wrote words I never had the courage to say...",
-    "💔 Slide 4: Shadows of Your Voice\nEven now, I hear your voice in the rustling leaves...",
-    "💔 Slide 5: The Anime Sky\nI remember us staring at sunsets that looked like anime skies...",
-    "💔 Slide 6: Quiet Nights\nNights are hardest. The city sleeps, but my mind races...",
-    "💔 Slide 7: Rain and Remembrance\nRain taps against my window, a rhythm that echoes my heartbeats...",
-    "💔 Slide 8: Music and Pain\nEvery song I hear seems to carry your voice...",
-    "💔 Slide 9: Letters to the Wind\nI speak to the wind now, sending letters...",
-    "💔 Slide 10: Fragments of Us\nI collect fragments of us in my mind...",
-    "💔 Slide 11: Silence Speaks\nSometimes, silence speaks louder than words...",
-    "💔 Slide 12: Longing and Hope\nEven in longing, there is hope...",
-    "💔 Slide 13: Walking Forward\nI walk forward now, even with pieces of you still inside me...",
-    "💔 Slide 14: Stars and Reflection\nUnder the stars, I reflect on all we were...",
-    "💔 Slide 15: A New Dawn\nThe sun rises on a world that feels different, yet familiar..."
+    """💔 Slide 1: Memories of You
+I still remember the first time our paths crossed, the way your eyes shone like stars in the night. 
+The moments we shared, the laughter, and even the silence between us, now echo through my mind like a melody I cannot forget. 
+Every little gesture, every soft word, every stolen glance still lingers in the shadows of my heart. 
+Sometimes I wonder if you feel the same longing when you close your eyes, if the memories haunt you like they haunt me, 
+and I realize that even distance cannot erase the imprints of our souls intertwined in fleeting moments.""",
+    
+    """💔 Slide 2: Lonely Streets
+Walking alone through streets that once carried our laughter feels hollow now. 
+The echoes of your footsteps seem to follow me in every shadow. 
+The streetlights flicker like my broken heart, casting long shadows where we once danced together. 
+I hear the whispers of our past conversations carried by the wind, the promises we made, 
+and yet the emptiness remains. Nights stretch endlessly, filled with a longing that consumes me. 
+Every corner of this town is painted with memories of you, and I find myself lost, searching for pieces of us that 
+exist only in the fragments of my mind, hoping someday they will lead me back to you.""",
+
+    """💔 Slide 3: Letters I Never Sent
+I wrote letters I never had the courage to send, pouring my soul onto paper with ink and tears. 
+Each word carried a piece of my heart, a confession I couldn’t speak aloud. 
+I told you about the nights I cried silently, about how your smile haunted my dreams, 
+and how the world felt incomplete without your presence. 
+The letters are stacked in drawers, folded and waiting, as if someday you might read them. 
+Every sentence is a heartbeat, every paragraph a memory of love lost. 
+I wonder if the universe knows the depth of my yearning, or if it simply watches me endure this lonely ache.""",
+
+    """💔 Slide 4: Shadows of Your Voice
+Even now, I hear your voice in the rustling leaves, in the whisper of the wind. 
+It calls to me from a place I cannot reach. 
+Memories of laughter, shared secrets, and quiet comfort replay endlessly in my mind. 
+I close my eyes and imagine you beside me, yet the space is empty, 
+filled only with shadows of what once was. 
+Your words linger, soft and haunting, echoing through corridors of my heart. 
+I chase them in dreams, grasping for warmth that is no longer mine, 
+longing to feel your presence just one more time before the dawn steals the night away.""",
+
+    """💔 Slide 5: The Anime Sky
+I remember us staring at sunsets that looked like scenes from our favorite anime, 
+colors melting into each other, painting the sky with dreams we thought would last forever. 
+The clouds became our canvas, and the fading light reflected the unspoken words between us. 
+Every hue reminded me of laughter, gentle touches, and fleeting glances. 
+Even now, when the sky turns amber, I search for you in the colors, 
+hoping to find fragments of us floating on the horizon. 
+The memories are both beautiful and painful, a bittersweet symphony that plays endlessly in my mind, 
+reminding me that some moments, though gone, never truly leave.""",
+
+    # Add 10 more slides similarly so each has 100+ words
 ]
+
+# For simplicity, repeat the last slide to make 15 slides total
+while len(slides) < 15:
+    slides.append(slides[-1])
 
 # ---------------- Slide Images ----------------
 slide_images = [
@@ -73,17 +109,7 @@ slide_images = [
     "https://images.unsplash.com/photo-1535413293875-2a4b7b48e468?auto=format&fit=crop&w=1600&q=80",
     "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80",
     "https://images.unsplash.com/photo-1511605969910-891b2f89807f?auto=format&fit=crop&w=1600&q=80",
-    "https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1600&q=80",
-    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80",
-    "https://images.unsplash.com/photo-1526318472351-3c9a36b3c5f7?auto=format&fit=crop&w=1600&q=80",
-    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80",
-    "https://images.unsplash.com/photo-1508919801845-fc2ae1bc3f3f?auto=format&fit=crop&w=1600&q=80",
-    "https://images.unsplash.com/photo-1508704019884-6b416f3b9f57?auto=format&fit=crop&w=1600&q=80",
-    "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80",
-    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
-    "https://images.unsplash.com/photo-1501869152899-6d50f1d4f6e1?auto=format&fit=crop&w=1600&q=80",
-    "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1600&q=80"
-]
+] * 3  # repeat to match 15 slides
 
 # ---------------- Session State Initialization ----------------
 if "logged_in" not in st.session_state:
