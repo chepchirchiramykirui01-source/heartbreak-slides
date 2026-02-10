@@ -34,5 +34,7 @@ if "locked" not in st.session_state:
 
 # ---------------- LOCKOUT LOGIC ----------------
 if st.session_state.locked:
-    st.error("Too many attempts. This pag
+    st.error("Too many attempts. This page is temporarily locked.")
+
+
 
