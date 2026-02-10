@@ -3,7 +3,7 @@ import streamlit as st
 # ---------------- Page Config ----------------
 st.set_page_config(page_title="For Denian", layout="centered")
 
-# ---------------- Dark & Heartbreak Theme ----------------
+# ---------------- Dark Theme ----------------
 st.markdown(
     """
     <style>
@@ -31,55 +31,44 @@ if "locked" not in st.session_state:
 if "current_slide" not in st.session_state:
     st.session_state.current_slide = 0
 if "comments" not in st.session_state:
-    st.session_state.comments = [""] * 15  # empty comments for each slide
+    st.session_state.comments = [""] * 15
 
-# ---------------- Heartbreak Slides ----------------
+# ---------------- Slides Content ----------------
 slides = [
-"""💔 Slide 1: Memories of You
-I still remember the first time our paths crossed, the way your laughter echoed in my mind long after you left...
-""",
-"""💔 Slide 2: Lonely Streets
-Walking alone, streets empty, I hear echoes of our conversations in the wind...
-""",
-"""💔 Slide 3: Letters I Never Sent
-I wrote words I never had the courage to say, pouring my soul into letters I never sent...
-""",
-"""💔 Slide 4: Shadows of Your Voice
-Even now, I hear your voice in the rustling leaves, the hum of a distant train...
-""",
-"""💔 Slide 5: The Anime Sky
-I remember us staring at sunsets that looked like anime skies, painted in shades of fire and gold...
-""",
-"""💔 Slide 6: Quiet Nights
-Nights are hardest. The city sleeps, but my mind races...
-""",
-"""💔 Slide 7: Rain and Remembrance
-Rain taps against my window, a rhythm that echoes my heartbeats...
-""",
-"""💔 Slide 8: Music and Pain
-Every song I hear seems to carry your voice, the echo of moments we shared...
-""",
-"""💔 Slide 9: Letters to the Wind
-I speak to the wind now, sending letters that drift where you might never read them...
-""",
-"""💔 Slide 10: Fragments of Us
-I collect fragments of us in my mind—the jokes, the fights, the late-night talks...
-""",
-"""💔 Slide 11: Silence Speaks
-Sometimes, silence speaks louder than words. I hear it in the empty apartment...
-""",
-"""💔 Slide 12: Longing and Hope
-Even in longing, there is hope. I imagine anime skies where light breaks through dark clouds...
-""",
-"""💔 Slide 13: Walking Forward
-I walk forward now, even with pieces of you still inside me...
-""",
-"""💔 Slide 14: Stars and Reflection
-Under the stars, I reflect on all we were...
-""",
-"""💔 Slide 15: A New Dawn
-The sun rises on a world that feels different, yet familiar...
-"""
+    "💔 Slide 1: Memories of You\nI still remember the first time our paths crossed...",
+    "💔 Slide 2: Lonely Streets\nWalking alone, streets empty...",
+    "💔 Slide 3: Letters I Never Sent\nI wrote words I never had the courage to say...",
+    "💔 Slide 4: Shadows of Your Voice\nEven now, I hear your voice in the rustling leaves...",
+    "💔 Slide 5: The Anime Sky\nI remember us staring at sunsets that looked like anime skies...",
+    "💔 Slide 6: Quiet Nights\nNights are hardest. The city sleeps, but my mind races...",
+    "💔 Slide 7: Rain and Remembrance\nRain taps against my window, a rhythm that echoes my heartbeats...",
+    "💔 Slide 8: Music and Pain\nEvery song I hear seems to carry your voice...",
+    "💔 Slide 9: Letters to the Wind\nI speak to the wind now, sending letters...",
+    "💔 Slide 10: Fragments of Us\nI collect fragments of us in my mind...",
+    "💔 Slide 11: Silence Speaks\nSometimes, silence speaks louder than words...",
+    "💔 Slide 12: Longing and Hope\nEven in longing, there is hope...",
+    "💔 Slide 13: Walking Forward\nI walk forward now, even with pieces of you still inside me...",
+    "💔 Slide 14: Stars and Reflection\nUnder the stars, I reflect on all we were...",
+    "💔 Slide 15: A New Dawn\nThe sun rises on a world that feels different, yet familiar..."
+]
+
+# ---------------- Slide Images (anime + heartbreak theme) ----------------
+slide_images = [
+    "https://images.unsplash.com/photo-1517256064527-09c73fc73e68?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1528794701846-1a9b80d021d2?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1535413293875-2a4b7b48e468?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1511605969910-891b2f89807f?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1526318472351-3c9a36b3c5f7?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1508919801845-fc2ae1bc3f3f?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1508704019884-6b416f3b9f57?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1501869152899-6d50f1d4f6e1?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80"
 ]
 
 # ---------------- Login / Logout ----------------
@@ -105,4 +94,45 @@ def show_logout():
         st.success("Logged out successfully 💔")
 
 # ---------------- Main App ----------------
-if st.ses
+if st.session_state.locked:
+    st.error("Too many login attempts. You are temporarily locked out.")
+elif not st.session_state.logged_in:
+    show_login()
+else:
+    # Show slide image
+    st.image(slide_images[st.session_state.current_slide], use_column_width=True)
+
+    st.title("💔 Heartbreak Slides")
+
+    # ---------------- Slide Navigation ----------------
+    col1, col2, col3 = st.columns([1,2,1])
+
+    with col1:
+        if st.button("⬅ Previous"):
+            if st.session_state.current_slide > 0:
+                st.session_state.current_slide -= 1
+
+    with col2:
+        st.markdown(slides[st.session_state.current_slide])
+
+        # ---------------- Comment Section ----------------
+        idx = st.session_state.current_slide
+        comment = st.text_area(
+            "Leave a comment:", 
+            value=st.session_state.comments[idx],
+            key=f"comment_{idx}"
+        )
+        if st.button("Submit Comment", key=f"submit_{idx}"):
+            st.session_state.comments[idx] = comment
+            st.success("Comment saved 💌")
+
+        # Optional audio per slide (can replace with real mp3 URLs)
+        st.audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", format="audio/mp3")
+
+    with col3:
+        if st.button("Next ➡"):
+            if st.session_state.current_slide < len(slides) - 1:
+                st.session_state.current_slide += 1
+
+    # Logout button at bottom
+    show_logout()
